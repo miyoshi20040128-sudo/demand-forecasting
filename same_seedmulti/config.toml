@@ -1,0 +1,46 @@
+[path]
+sales_path = "data/sales.csv"
+weather_path = "data/weather.csv"
+output_dir = "output"
+
+[data]
+area = "Tokyo"
+train_years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+valid_year = 2024
+valid_item_index = "12"
+validation_months = 6
+
+[model]
+seq_len = 30
+pred_len = 7
+d_model = 64
+n_heads = 4
+num_layers = 2
+dropout = 0.1
+
+[train]
+batch_size = 32
+epochs = 100
+learning_rate = 0.001
+patience = 20
+seed = 42
+
+# 単独実行時のデフォルト
+loss = "mse"
+
+[loss]
+# DILATE用
+alpha = 0.8
+gamma = 0.1
+
+# Huber用
+huber_delta = 1.0
+
+# Derivative loss用
+derivative_alpha = 1.0
+derivative_beta = 0.1
+
+[compare]
+# 1回の実行で全部回す損失関数
+#loss_names = ["mse", "mae", "huber", "dilate", "derivative"]
+loss_names = ["mse", "mae", "huber", "dilate", "derivative"]
