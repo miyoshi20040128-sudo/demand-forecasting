@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.AppleDouble
+.ipynb_checkpoints/
+.venv/
+venv/
+.idea/
+.vscode/
+*.egg-info/
